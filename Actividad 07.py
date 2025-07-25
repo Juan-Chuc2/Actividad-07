@@ -34,6 +34,12 @@ def es_primo(n):
         if n % i == 0:
             return False
     return True
+def calcular_promedio_notas(suma, cantidad):
+    if cantidad != 0:
+        resultado = suma/cantidad
+    else:
+        resultado = 0
+    return resultado
 saludar()
 while True:
     print("\n ===MENU===")
@@ -78,3 +84,19 @@ while True:
                     print(int(numero), "NO es un número primo.")
             else:
                 print("Entrada inválida. Debe ingresar un número.")
+        case "4":
+            print("\n --Calculo de promedio de calificaciones--")
+            calificacion = int(input("Ingrese el numero de calificaciones que se va a calcular "))
+            adittion = 0
+            mayor_a_85 =0
+            menor_a_60 =0
+            for i in range(calificacion):
+                notas = float(input("Ingrese sus notas "))
+                adittion += notas
+                if notas >=85:
+                    mayor_a_85 +=1
+                elif notas <60:
+                    menor_a_60 +=1
+            print(f"el promedio es: {calcular_promedio_notas(adittion,calificacion)}")
+            print(f"Los mayores a 85 son: {mayor_a_85}")
+            print(f"Los menores a 60 son: {menor_a_60}")
