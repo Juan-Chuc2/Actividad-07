@@ -48,6 +48,14 @@ def contar_frcuencia(numeros):
         else:
             frequency[numero] =1
     return frequency
+def sumar(a,b):
+    return a+b
+def restar(a,b):
+    return a-b
+def dividir_(a,b):
+    return a/b
+def multiplicar(a,b):
+    return a*b
 saludar()
 while True:
     print("\n ===MENU===")
@@ -124,4 +132,32 @@ while True:
                 for num, freq in frecuencias.items():
                     if freq > 1:
                         print(f"  El número {num} se repite {freq} veces.")
-
+        case "6":
+            while True:
+                print("\n --CALCULADORA--")
+                print("1. Suma")
+                print("2. Resta ")
+                print("3. Multiplicacio")
+                print("4. Division ")
+                print("5. Volver al menu principal")
+                sub_option = input("Que operacion desea realizar (1-5)")
+                match sub_option:
+                    case "1":
+                        a = float(input("Ingrese el primer valor "))
+                        b = float(input("Ingrese el segundo valor "))
+                        print(f"La suma de los numeros es: {sumar(a,b)}")
+                    case "2":
+                         a = float(input("Ingrese el primer valor "))
+                         b = float(input("Ingrese el segundo valor "))
+                         print(f"El resultado de la resta es: {restar(a,b)}")
+                    case "3":
+                        a = float(input("Ingrese el primer valor "))
+                        b = float(input("Ingrese el segundo valor "))
+                        print(f"El resultado de la mutiplicacion es: {multiplicar(a,b)}")
+                    case "4":
+                        a = float(input("Ingrese el primer valor "))
+                        b = float(input("Ingrese el segundo valor "))
+                        print(f"El resultado de la division es: {dividir_(a,b)}")
+                    case "5":
+                        print("Volviendo al menu... Gracias por usar la calculadora")
+                        break
