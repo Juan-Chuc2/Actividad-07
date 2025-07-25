@@ -27,6 +27,13 @@ def calcular_area_de_un_rectangulo(base, altura):
 def calcular_el_perimetro_de_un_rectangulo(base, altura):
     perimetro = (2*base) + (2*altura)
     return perimetro
+def es_primo(n):
+    if n < 2 or n != int(n):
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 saludar()
 while True:
     print("\n ===MENU===")
@@ -60,3 +67,14 @@ while True:
             altura = float(input("Ingrese la medida de la altura del rectangulo "))
             print(f"El area de el rectangulo es: {calcular_area_de_un_rectangulo(base, altura)}")
             print(f"El perimetro del rectangulo es: {calcular_el_perimetro_de_un_rectangulo(base, altura)}")
+        case "3":
+            numero = input("Ingrese un número para verificar si es primo: ")
+
+            if numero.replace('.', '', 1).replace('-', '', 1).isdigit():
+                numero = float(numero)
+                if es_primo(numero):
+                    print(int(numero), "es un número primo.")
+                else:
+                    print(int(numero), "NO es un número primo.")
+            else:
+                print("Entrada inválida. Debe ingresar un número.")
