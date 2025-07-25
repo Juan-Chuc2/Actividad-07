@@ -161,3 +161,6 @@ while True:
                     case "5":
                         print("Volviendo al menu... Gracias por usar la calculadora")
                         break
+        case "7":
+            print("Gracias por utilizar nuestro programa")
+            break
