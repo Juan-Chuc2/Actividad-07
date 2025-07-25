@@ -70,7 +70,7 @@ while True:
     match option:
         case "1":
             print("\n --Lista de numeros--")
-            number_user = int(input("Cuantos numeros desea ingresar "))
+            number_user = ask_for_int_number("Cuantos numeros desea ingresar ")
             numbers = []
             for i in range(number_user):
                 number = float(input("Ingrese los numneros "))
