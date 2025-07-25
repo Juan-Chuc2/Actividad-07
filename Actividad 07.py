@@ -22,11 +22,16 @@ def obtener_multiplos_de_3(numbers):
         if number %3==0:
             multiplos.append(number)
     return multiplos
+def calcular_area_de_un_rectangulo(base, altura):
+    return  base*altura
+def calcular_el_perimetro_de_un_rectangulo(base, altura):
+    perimetro = (2*base) + (2*altura)
+    return perimetro
 saludar()
 while True:
     print("\n ===MENU===")
     print("1. Ingreso de lista de n numeros y mostrar")
-    print("2. Calcular el area y perimetro de un recvtangulo")
+    print("2. Calcular el area y perimetro de un rectangulo")
     print("3 Verificar si un numero ingresado es primo o no ")
     print("4. Calcular el promedio de n calificaciones y clacificar")
     print("5. Ingresar una lista de n numeros y mostrar")
@@ -49,3 +54,9 @@ while True:
             print(f"la cantidad de numeros positivos son: {positivos}")
             print(f"la cantidad de numros ceros son: {ceros}")
             print(f"los multiplos de 3 son: {obtener_multiplos_de_3(numbers)} ")
+        case "2":
+            print("\n --Calcular area y perimetro de un rectangulo")
+            base = float(input("Ingrese la medida de la base del rectangulo "))
+            altura = float(input("Ingrese la medida de la altura del rectangulo "))
+            print(f"El area de el rectangulo es: {calcular_area_de_un_rectangulo(base, altura)}")
+            print(f"El perimetro del rectangulo es: {calcular_el_perimetro_de_un_rectangulo(base, altura)}")
