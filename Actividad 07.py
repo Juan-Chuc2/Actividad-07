@@ -40,6 +40,14 @@ def calcular_promedio_notas(suma, cantidad):
     else:
         resultado = 0
     return resultado
+def contar_frcuencia(numeros):
+    frequency = {}
+    for numero in numeros:
+        if numero in frequency:
+            frequency[numero] +=1
+        else:
+            frequency[numero] =1
+    return frequency
 saludar()
 while True:
     print("\n ===MENU===")
@@ -100,3 +108,20 @@ while True:
             print(f"el promedio es: {calcular_promedio_notas(adittion,calificacion)}")
             print(f"Los mayores a 85 son: {mayor_a_85}")
             print(f"Los menores a 60 son: {menor_a_60}")
+        case "5":
+            print("\n --lista de n numeros--")
+            cantidad = int(input("Ingrese la cantidad de numeros que se van a mostrar "))
+            numeros = []
+            for i in range(cantidad):
+                numero = int(input("Ingrese los numeros "))
+                numeros.append(numero)
+                mayor =max(numeros)
+                menor = min(numeros)
+                frecuencias = contar_frcuencia(numeros)
+                print(f"Numero mayor {mayor}")
+                print(f"numero menor {menor}")
+                print("Frrecuencia de los numeros ingresados: ")
+                for num, freq in frecuencias.items():
+                    if freq > 1:
+                        print(f"  El número {num} se repite {freq} veces.")
+
